@@ -32,7 +32,7 @@ public class UserController {
             throw new RuntimeException("recUserId未建立连接:"+recUserId);
         }
         rabbitTemplate.convertAndSend(Constant.TOPIC, o.toString(),message);
-        return "success";
+        return "msg send success";
     }
 
     @GetMapping("/buildRoutingKey")
